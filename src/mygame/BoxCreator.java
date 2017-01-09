@@ -7,7 +7,6 @@ package mygame;
 import com.jme3.asset.AssetManager;
 import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
-import com.jme3.math.Vector3f;
 import com.jme3.scene.Geometry;
 import com.jme3.scene.shape.Box;
 
@@ -19,7 +18,7 @@ public abstract class BoxCreator {
     public static Geometry create(AssetManager am,float x, float y, float z, 
                 String geomName, int colorNum){
         Box b = new Box(x, y, z);
-        Geometry geom = new Geometry("geomName", b);
+        Geometry geom = new Geometry(geomName, b);
         Material mat = new Material(am, "Common/MatDefs/Misc/Unshaded.j3md");
         switch(colorNum){
             case 0: mat.setColor("Color", ColorRGBA.Black);
